@@ -131,6 +131,7 @@ public class SimpleJobLauncher implements JobLauncher, InitializingBean {
 		jobExecution = jobRepository.createJobExecution(job.getName(), jobParameters);
 
 		try {
+			/// sync executor just call run method(wait result)
 			taskExecutor.execute(new Runnable() {
 
 				@Override
